@@ -25,6 +25,10 @@ public:
         const float PI = 3.14159265358979323846f;
         return PI * radius * radius;
     }
+
+    static inline float volume(float width, float height, float length) {
+		return width * height * length;
+	}
 };
 
 class Algebra {

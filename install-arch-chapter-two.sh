@@ -19,8 +19,9 @@ echo 'arch' > /etc/hostname && \
 echo '127.0.0.1 localhost' >> /etc/hosts && \
 echo '::1 localhost' >> /etc/hosts && \
 echo '127.0.1.1 arch.localdomain arch' >> /etc/hosts && \
-passwd && \
-grub-install /dev/sda && \
+useradd -mG wheel -s /bin/bash miksa
+passwd miksa && \
+grub-install /dev/sda --target=x86_64-efi&& \
 grub-mkconfig -o /boot/grub/grub.cfg && \
 systemctl enable dhcpcd && \
 exit" && \
